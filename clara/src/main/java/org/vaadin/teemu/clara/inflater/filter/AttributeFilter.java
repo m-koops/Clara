@@ -8,7 +8,7 @@ public interface AttributeFilter {
      * This method is called before an attribute value is set to a
      * {@link Component} allowing manipulation of the value by calling
      * {@link AttributeContext#setValue(Object)}.
-     * 
+     *
      * <br />
      * <br />
      * Call the {@link AttributeContext#proceed()} to proceed to the next
@@ -16,9 +16,10 @@ public interface AttributeFilter {
      * {@link AttributeFilter}s exist. If you do not call the
      * {@link AttributeContext#proceed()} method, the value will never be set
      * for the {@link Component}.
-     * 
+     *
      * @param attributeContext
+     * @throws AttributeFilterException on failures.
      */
-    void filter(AttributeContext attributeContext);
+    void filter(AttributeContext attributeContext) throws AttributeFilterException;
 
 }
